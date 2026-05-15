@@ -1,0 +1,248 @@
+/* Sidebar layout */
+.sidebar,
+.sidebarextended {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #eef2ff 0%, #dbeafe 100%);
+    padding: 20px;
+    border-right: 1px solid rgba(59, 130, 246, 0.16);
+    box-shadow: 2px 0 24px rgba(15, 23, 42, 0.08);
+    overflow-y: auto;
+    transition: width 0.25s ease, padding 0.25s ease;
+}
+
+.sidebar {
+    width: 260px;
+}
+
+.sidebarextended {
+    width: 87px;
+}
+
+.sidebarextended h1,
+.sidebarextended h2 {
+    display: none;
+}
+
+/* Heading styling */
+h1 {
+    text-align: left;
+    color: #1e293b;
+    font-size: 24px;
+    margin: 0 0 18px;
+    font-weight: 700;
+}
+
+.sidebar h2 {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+}
+
+/* Top Section */
+.top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.sidebarextended .top {
+    align-items: center;
+}
+
+/* Menu Icon */
+.hamburger {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    margin: 0 0 20px 0px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.hamburger:hover {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+}
+
+.sidebar .hamburger{
+    margin: 0 0 20px 0px;
+}
+
+/* New Chat Button */
+.newchat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.sidebarextended .newchat {
+    justify-content: center;
+    padding: 12px;
+}
+
+.newchat:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.newchat img {
+    width: 18px;
+    height: 18px;
+}
+
+.newchat span {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Recent Section */
+.recent {
+    margin-top: 28px;
+}
+
+.recent p {
+    font-size: 11px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.recent-item:hover {
+    background: white;
+    transform: translateX(2px);
+}
+
+.recent-item img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.recent-item span {
+    font-size: 13px;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Bottom Section */
+.bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid rgba(148, 163, 184, 0.24);
+    padding-top: 18px;
+}
+
+.sidebarextended .bottom {
+    align-items: center;
+}
+
+/* Settings and Help Items */
+.settings,
+.help {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidebarextended .settings,
+.sidebarextended .help {
+    justify-content: center;
+    padding: 12px;
+}
+
+.settings:hover,
+.help:hover {
+    background: white;
+    transform: translateX(2px);
+}
+
+.settings img,
+.help img {
+    width: 18px;
+    height: 18px;
+}
+
+.settings span,
+.help span {
+    font-size: 13px;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar,
+.sidebarextended::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.sidebarextended::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.sidebarextended::-webkit-scrollbar-thumb {
+    background: rgba(100, 116, 139, 0.35);
+    border-radius: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.sidebarextended::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 116, 139, 0.55);
+}
+
+/* Mobile support */
+@media (max-width: 720px) {
+    .sidebar,
+    .sidebarextended {
+        width: 100%;
+        min-width: auto;
+        height: auto;
+        padding: 16px;
+    }
+
+    .newchat,
+    .settings,
+    .help,
+    .recent-item {
+        padding: 12px 14px;
+    }
+}
